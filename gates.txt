@@ -24,5 +24,21 @@ assign y4= a^b;
 assign y5 = !(a^b);
 assign y6 = !(a&b);
 
+Qn: f=m(0,1,2,5)
+
+Structural 
+
+module sopf(a,b,c,y)
+input a,b,c;
+output y;
+wire d,e,f,g,h;
+NOT(d,a);
+NOT(e,b);
+NOT(f,c);
+AND(g,d,e);
+AND(h,c,f);
+OR(y,g,h);
+endmodule
+
 
 

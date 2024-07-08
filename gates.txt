@@ -40,5 +40,46 @@ AND(h,c,f);
 OR(y,g,h);
 endmodule
 
+Dataflow
+
+module(a,b,c,y);
+input a,b,c;
+output y;
+wire w1,w2;
+assign w1=(~a) & (~c);
+assign w2=(~b) & c;
+assign y= w1|w2;
+endmodule
+
+Qn: Summation(0,1,2,3,5,7,8,10)
+DataFlow
+
+startmodule(a,b,c,y);
+input a,b,c;
+output y;
+wire w1,w2;
+assign w1=a|(~d);
+assign w2=d|b;
+assign y=w1&w2;
+endmodule
+
+Structural
+
+startmodule(a,b,c,y);
+input a,b,c;
+output y;
+wire e,f,g;
+NOT(e,d);
+OR(f,e,a);
+OR(g,d,b);
+AND(y,f,g);
+emdmodule
+
+
+
+
+
+
+
 
 
